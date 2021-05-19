@@ -76,8 +76,17 @@ module.exports = {
             return;
         }// end of states
         this.executionLog(`~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${this.currentStateName} started ~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
-        f(event, this.contextObject, this.contextObject.done);
 
+        if (f.constructor.name === 'AsyncFunction') {
+            return f(event, this.contextObject).then(data => {
+                this.contextObject.done(null, data);
+            }).catch(err => {
+                this.executionLog(`Lambda execution failed with error: ${err}`);
+                this.contextObject.done(err);
+            });
+        }
+
+        f(event, this.contextObject, this.contextObject.done);
     },
 
     _states(currentState, currentStateName) {
