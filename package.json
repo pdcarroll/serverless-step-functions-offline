@@ -1,16 +1,16 @@
 {
   "name": "serverless-step-functions-offline-async",
   "version": "0.0.1",
-  "description": "Serverlesss plugin to support step function offline",
+  "description": "A fork of serverless-step-functions-offline with added support for async lambda handlers.",
   "main": "index.js",
-  "author": "viktor.kis <vkkis1993@gmail.com>",
+  "author": "Patrick Carroll <pcarroll.design@gmail.com>",
   "bugs": {
-    "url": "https://github.com/vkkis93/serverless-step-functions-offline/issues"
+    "url": "https://github.com/pdcarroll/serverless-step-functions-offline/issues"
   },
-  "homepage": "https://github.com/vkkis93/serverless-step-functions-offline#readme",
+  "homepage": "https://github.com/pdcarroll/serverless-step-functions-offline#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vkkis93/serverless-step-functions-offline.git"
+    "url": "git@github.com:pdcarroll/serverless-step-functions-offline.git"
   },
   "scripts": {
     "test": "nyc ./node_modules/mocha/bin/mocha  ./tests/index.test.js './tests/!(index).test.js'",
