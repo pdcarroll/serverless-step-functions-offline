@@ -5,7 +5,11 @@
 [![NPM](https://nodei.co/npm/serverless-step-functions-offline.png)](https://nodei.co/npm/serverless-step-functions-offline/)
 
 # serverless-step-functions-offline
+
+**This is a fork of [serverless-step-functions-offline](https://www.npmjs.com/package/serverless-step-functions-offline) with added support for async Lambda handlers.**
+
 :warning: Version 2.0 with breaking changes see [usage](#usage)  :warning:
+
 ## Documentation
 
 - [Install](#install)
