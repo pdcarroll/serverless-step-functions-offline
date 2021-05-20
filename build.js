@@ -75,13 +75,13 @@ module.exports = {
         if (!f) {
             return;
         }// end of states
-        this.executionLog(`~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${this.currentStateName} started ~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
+        this.cliLog(`~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${this.currentStateName} started ~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
 
         if (f.constructor.name === 'AsyncFunction') {
             return f(event, this.contextObject).then(data => {
                 this.contextObject.done(null, data);
             }).catch(err => {
-                this.executionLog(`Lambda execution failed with error: ${err}`);
+                this.cliLog(`Lambda execution failed with error: ${err}`);
                 this.contextObject.done(err);
             });
         }
@@ -283,7 +283,7 @@ module.exports = {
             if (err) {
                 throw `Error in function "${this.currentStateName}": ${JSON.stringify(err)}`;
             }
-            this.executionLog(`~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${this.currentStateName} finished ~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
+            this.cliLog(`~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${this.currentStateName} finished ~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
             let state = this.states;
             if (this.parallelBranch && this.parallelBranch.States) {
                 state = this.parallelBranch.States;
