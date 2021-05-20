@@ -1,6 +1,6 @@
 {
   "name": "serverless-step-functions-offline-async",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A fork of serverless-step-functions-offline with added support for async lambda handlers.",
   "main": "index.js",
   "author": "Patrick Carroll <pcarroll.design@gmail.com>",
