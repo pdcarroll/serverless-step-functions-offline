@@ -24,11 +24,11 @@
 # Install
 Using NPM:
 ```bash
-npm install serverless-step-functions-offline --save-dev
+npm install serverless-step-functions-offline-async --save-dev
 ```
 or Yarn:
 ```bash
-yarn add serverless-step-functions-offline --dev
+yarn add serverless-step-functions-offline-async --dev
 ```
 
 # Setup
@@ -103,6 +103,18 @@ stepFunctions:
 Where:
 - `StepOne` is the name of step in state machine
 - `firstLambda` is the name of function in section **functions**
+
+# Async Support
+
+Lambda handler functions can use `async`:
+
+`firstLambda/index.js`:
+
+```js
+module.exports = async function handler (event, context, callback) {
+  ...
+}
+```
 
 # Run Plugin
 ```bash
